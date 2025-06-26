@@ -1,36 +1,23 @@
 
 
 结构
-FlaskProjectv4/
+root/
+├── .gitignore          # git忽略规则
+├── .env                # 本地环境变量（被忽略）
+├── requirements.txt    # 依赖列表
 ├── app.py
-├── config.py
+├── config.py           # 数据库配置模块（无敏感信息）
 ├── models/
 │   ├── __init__.py
-│   ├── student.py
-│   └── database.py
-├── services/
+│   ├── student.py      #Student模型
+│   └── database.py     #数据库操作
+├── services/           #业务逻辑
 │   ├── __init__.py
 │   ├── student_service.py
 │   └── stats_service.py
-├── controllers/
+├── controllers/        #路由控制器
 │   ├── __init__.py
 │   └── student_controller.py
 ├── templates/
 │   └── index.html
 └── static/
-
-
-
-将数据库配置提取到config.py
-
-Student模型独立到models/student.py
-
-数据库操作封装在models/database.py
-
-业务逻辑放在services/目录
-
-路由控制器放在controllers/
-
-使用Blueprint组织路由
-
-保持原有功能不变
