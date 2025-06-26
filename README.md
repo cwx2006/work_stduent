@@ -25,8 +25,8 @@
 ### 1. 克隆项目
 
 ```bash
-git clone https://github.com/yourusername/student-management-system.git
-cd student-management-system
+git clone https://github.com/cwx2006/work_student.git
+cd work_stduen # 打开文件夹
 ```
 
 ### 2. 创建并激活虚拟环境
@@ -43,7 +43,7 @@ source venv/bin/activate
 ```bash
 pip install -r requirements.txt
 ```
-### 4. 创建并配置 .env 文件
+### 4. 创建并配置 .env 文件(以Linux系统为例)
 ```bash
 # 复制示例文件
 cp .env.example .env
@@ -71,7 +71,7 @@ python app.py
 
 🔧 项目结构
 ```
-root/
+work_student/
 ├── app.py                 # 应用入口
 |── config.py              # 数据库配置模块（无敏感信息）
 ├── init_db.py             # 数据库初始化脚本
@@ -94,65 +94,75 @@ root/
 └── templates/             # 前端模板
     └── index.html
 ```
-📊 技术栈
+### 💻 技术栈
 
-后端: Python, Flask
+| 类别       | 技术               | 说明                     |
+|----------|--------------------|--------------------------|
+| **后端**   | Python, Flask      | Web框架和编程语言        |
+| **数据库** | MySQL 8.0+         | 关系型数据库管理系统     |
+| **前端**   | Bootstrap, HTML5   | UI框架和数据可视化库    |
+| **工具**   | Git, pip, dotenv   | 版本控制，管理依赖，管理环境  |
 
-数据库: MySQL
+### 📝 使用指南
 
-前端: Bootstrap,HTML5
+#### 添加学生:
 
-依赖管理: pip,pipreqs 
+- 1.点击"添加新学生"框
 
-环境管理: python-dotenv,
+- 2.填写学生姓名、班级和各科成绩（0-100分）
 
-📝 使用指南
-添加学生:
+- 3.点击"提交"保存记录
 
-在"添加新学生"表单中填写学生信息
+#### 批量导入:
 
-成绩范围: 0-100分
+- 1.准备CSV文件（格式：姓名,班级,语文,数学,英语,计算机）
 
-批量导入:
+- 2.在"批量导入"页面拖放或选择文件
 
-准备CSV文件，格式: 姓名,班级,语文,数学,英语,计算机
+- 3.系统自动验证并导入数据
 
-拖拽或选择文件上传
+#### 数据分析:
 
-数据分析:
+- 学科分析：查看各科平均分、最高分、最低分
 
-查看各科平均分、最高分、最低分
+- 总分统计：分析班级/年级总分分布
 
-查看总分统计
+- 分差计算：识别学科成绩差异
 
-数据管理:
+#### 成绩分析
 
-删除单个学生记录
+- 学科分析：查看各科平均分、最高分、最低分
 
-清空所有数据并恢复示例
+- 分差计算：识别学科成绩差异
 
-🤝 贡献指南
-欢迎提交 Issue 和 Pull Request!
+#### 数据管理
 
-Fork 项目
+- 删除记录：移除单个学生数据
 
-创建新分支 (git checkout -b feature/your-feature)
+- 重置系统：清空所有数据并恢复示例
 
-提交更改 (git commit -am 'Add some feature')
+### 🤝 贡献指南
+欢迎提交 Issue 和 Pull Request!请遵循以下流程：
 
-推送分支 (git push origin feature/your-feature)
+- 1.Fork 项目仓库
 
-创建 Pull Request
+- 2.创建特性分支 (git checkout -b feature/new-feature)
 
-📄 许可证
+- 3.提交更改 (git commit -am '添加新功能')
+
+- 4.推送分支 (git push origin feature/new-feature)
+
+- 5.创建 Pull Request
+
+注意事项：
+
+- 1.提交前确保通过所有测试
+
+- 2.更新相关文档（如README）
+
+- 3.遵循PEP 8代码规范
+
+### 📄 许可证
 本项目采用 MIT 许可证
 
-数据库配置
-DB_HOST=localhost
-DB_USER=your_db_user
-DB_PASSWORD=your_strong_password
-DB_NAME=student_system
-
-可选配置
-DEBUG=True
-PORT=6500
+提示：系统默认运行在6500端口，可通过修改app.py文件中的PORT配置项更改端口号。生产环境请设置DEBUG=False确保系统安全。
