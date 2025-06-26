@@ -72,24 +72,24 @@ python app.py
 🔧 项目结构
 ```
 work_student/
-├── app.py                 # 应用入口
+├── app.py                 # 主程序入口
 |── config.py              # 数据库配置模块（无敏感信息）
 ├── init_db.py             # 数据库初始化脚本
 ├── requirements.txt       # 依赖列表
-├── .env.example           # 环境变量(数据库)（示例）
+├── .env.example           # 环境变量模板
 ├── .gitignore             # Git忽略规则
 ├── README.md              # 项目文档
 │
-├── controllers/           # 控制器
+├── controllers/           # 控制器层
 │   └── student_controller.py
 │
 ├── models/                # 数据模型
 │   ├── database.py        #数据库操作
-│   ├── student.py         #Student模型
+│   └── student.py         # 学生模型
 │
 ├── services/              # 服务层，放业务逻辑
-│   ├── student_service.py
-│   └── stats_service.py
+│   ├── student_service.py # 学生服务
+│   └── stats_service.py   # 统计服务
 │
 └── templates/             # 前端模板
     └── index.html
