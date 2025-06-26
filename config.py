@@ -4,8 +4,16 @@ import os
 import pymysql.cursors
 from dotenv import load_dotenv
 
-# 从 .env 文件加载环境变量
-load_dotenv()
+# 尝试从 .env 文件加载环境变量
+if not load_dotenv():
+    print("警告: 未找到 .env 文件，将使用系统环境变量")
+
+# 获取配置，如果缺失则报错
+def get_env(key, default=None):
+    value = os.getenv(key, default)
+    if value is None:
+        raise EnvironmentError(f"缺少必要的环境变量: {key}")
+    return value
 
 DB_CONFIG = {
     'host': os.getenv('DB_HOST', 'localhost'),
