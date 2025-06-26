@@ -1,5 +1,5 @@
 # app.py
-from flask import Flask
+from flask import Flask  #使用这个框架
 from controllers.student_controller import student_bp
 
 app = Flask(__name__)
