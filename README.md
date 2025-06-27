@@ -67,7 +67,7 @@ python init_db.py
 ```bash
 python app.py
 ```
-访问 http://localhost:6500 使用系统
+  访问 http://localhost:6500 使用系统
 
 🔧 项目结构
 ```
@@ -166,3 +166,5 @@ work_student/
 本项目采用 MIT 许可证
 
 提示：系统默认运行在6500端口，可通过修改app.py文件中的PORT配置项更改端口号。生产环境请设置DEBUG=False确保系统安全。
+
+你也可以尝试将程序使用docker部署到服务器上面。
